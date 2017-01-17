@@ -20,6 +20,8 @@ func main() {
 		language = os.Args[1]
 	}
 
+	name := "London Go Users"
+
 	// Note this is BAD, but demonstrates the concept.
 	pluginCmd := fmt.Sprintf("./greeter-%s", language)
 
@@ -53,5 +55,5 @@ func main() {
 	// We should have a Greeter now! This feels like a normal interface
 	// implementation but is in fact over an RPC connection.
 	greeter := raw.(greeting.Greeter)
-	fmt.Println(greeter.Greet())
+	fmt.Println(greeter.Greet(name))
 }

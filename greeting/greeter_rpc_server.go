@@ -5,7 +5,7 @@ type GreeterRPCServer struct {
 	Impl Greeter
 }
 
-func (s *GreeterRPCServer) Greet(args interface{}, resp *string) error {
-	*resp = s.Impl.Greet()
+func (s *GreeterRPCServer) Greet(args *GreeterInputArgs, resp *string) error {
+	*resp = s.Impl.Greet(args.Name)
 	return nil
 }

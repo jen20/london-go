@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/hashicorp/go-plugin"
 	"github.com/jen20/london-go/greeting"
 )
@@ -22,6 +24,6 @@ func main() {
 
 type GreeterFrench struct{}
 
-func (GreeterFrench) Greet() string {
-	return "Bonjour!"
+func (GreeterFrench) Greet(name string) string {
+	return fmt.Sprintf("Bonjour, %s!", name)
 }

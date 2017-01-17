@@ -6,6 +6,10 @@ import (
 	"github.com/hashicorp/go-plugin"
 )
 
+type GreeterInputArgs struct {
+	Name string
+}
+
 type GreeterPlugin struct {
 	Impl Greeter
 }
